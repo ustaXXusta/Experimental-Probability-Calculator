@@ -1,43 +1,204 @@
-body {
-  margin: 0px;
-  width: 100vw;
-  font-family: Apple Chancery, cursive !important;
-  background-color: rgb(210, 210, 210);
-  background-color: #e1d7c6;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
 }
 
+body {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  min-height: 100vh;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Header */
+.headerr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left, .h-right {
+  display: flex;
+  align-items: center;
+}
+
+.h-right p {
+  font-size: 1.2em;
+  color: #00ff88;
+  text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+}
+
+.h-right span {
+  font-weight: bold;
+  color: #ff0077;
+}
+
+/* Buttons */
+.buttonn, .bton-diceroll {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff0077, #00ff88);
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+.buttonn:hover, .bton-diceroll:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.7);
+}
+
+.buttonn:active, .bton-diceroll:active {
+  transform: scale(0.95);
+}
+
+/* Body Layout */
 .bodyy {
-  display: grid;
-  grid-template-columns: 1fr 0.25fr 1fr;
-  transform: translateY(18vh);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Ensures children stretch to match height */
+  padding: 20px;
+  flex-grow: 1;
+  gap: 20px;
+  min-height: calc(100vh - 140px); /* Adjust for header and footer */
+}
+
+.bodyy-left, .midd, .bodyy-right {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes content vertically */
+  height: 100%; /* Matches parent height */
+}
+
+.bodyy-left {
+  gap: 15px;
+  height: 80vh;
+}
+
+.meds {
+  padding: 15px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.meds:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+.countRoll, .counties {
+  font-size: 1.2em;
+  color: #e0e0e0;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.countRoll span, .counties span {
+  color: #ff0077;
+  font-weight: bold;
 }
 
 .midd {
-  transform: translate(0px, 8.5vh);
-  width: 10vw;
-  height: max-content;
-}
-.meds {
-  padding: 0.1vw;
-  border-radius: 25px 0px 25px 0px;
-  box-shadow: 1px 2px 1px rgb(19, 19, 19);
+  align-items: center;
+  gap: 10px;
+  height: 80vh;
 }
 
-.soru {
-  padding-left: 45px;
-  padding-top: 25px;
+.bodyy-right {
+  align-items: center;
+  gap: 20px;
+  height: 80vh;
 }
-.meds {
-  width: 250px;
-  height: 50px;
-  background-color: #f8f4ea;
-  margin-left: 50px;
-  margin-top: 25px;
-  padding-bottom: 10px;
+
+.dice-inp {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.counties {
-  font-size: 1.2em;
+
+.placeholder {
+  font-size: 2em;
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
 }
-.countRoll {
-  font-size: 1.1em;
+
+/* Footer */
+.footerr {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px; /* Equal spacing between logos */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footerr a {
+  flex: 0 0 auto; /* Prevents stretching */
+}
+
+.upbuttonn, .logoss, .logoss1 {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.upbuttonn:hover, .logoss:hover, .logoss1:hover {
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bodyy {
+    flex-direction: column;
+    align-items: center;
+    min-height: auto; /* Allow natural height on mobile */
+  }
+  .bodyy-left, .midd, .bodyy-right {
+    width: 100%;
+    max-width: 400px;
+    height: auto; /* Adjust height for content */
+    min-height: 200px; /* Ensure minimum height */
+  }
+  .headerr {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .countRoll, .counties {
+    font-size: 1em;
+  }
+  .placeholder {
+    font-size: 1.5em;
+  }
+  .buttonn, .bton-diceroll {
+    width: 120px;
+    font-size: 0.9em;
+  }
+  .footerr {
+    gap: 15px; /* Slightly smaller gap on mobile */
+  }
 }
