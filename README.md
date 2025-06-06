@@ -1,5 +1,5 @@
 # Dice Probability Calculator
-
+https://ustaxxusta.github.io/Experimental-Probability-Calculator/
 ## Overview
 The **Dice Probability Calculator** is a web application built with Javascript that calculates experimental probabilities of dice roll outcomes. It simulates rolling a standard six-sided die and tracks the frequency of each number (1–6) to compute probabilities based on user-initiated rolls.
 
